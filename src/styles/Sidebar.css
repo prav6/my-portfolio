@@ -1,0 +1,80 @@
+.sidebar {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.sidebar.faint {
+    opacity: 0.2; /* Adjust this value as needed */
+}
+
+.sidebar.visible {
+    opacity: 1;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #aaa;
+    border-radius: 50%;
+    margin: 20px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dot.active {
+    background-color: #000;
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: #aaa;
+    top: -20px;
+}
+
+.dot:first-child::before {
+    display: none;
+}
+
+.dot::after {
+    content: attr(data-tip);
+    position: absolute;
+    left: 30px;
+    white-space: nowrap;
+    font-size: 1rem;
+    color: transparent; /* Initially transparent */
+    transform: translateY(-50%);
+    top: 50%;
+    transition: color 0.3s ease; /* Transition for color */
+}
+
+.dot.active::after {
+    color: #000; /* Show text when active */
+}
+
+.sidebar.faint .dot::after {
+    color: transparent; /* Hide text when sidebar is faint */
+}
+
+/* Media query to hide sidebar on mobile devices */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}

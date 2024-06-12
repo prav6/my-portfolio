@@ -1,0 +1,67 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+.homeContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff; /* White background for a clean and modern look */
+    font-family: 'Montserrat', sans-serif; /* Modern and clean typography */
+    text-align: center; /* Centers the text within the container */
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+    max-width: 80%;
+    line-height: 1.6;
+}
+
+.scrollPrompt {
+    position: absolute;
+    bottom: 30px; /* Positioned at the bottom of the Home section */
+    text-align: center;
+    width: 100%; /* Full width */
+}
+
+.scrollPrompt span {
+    color: #888;
+    font-size: 1rem;
+    animation: fadeIn 2s infinite;
+}
+
+@keyframes fadeIn {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.scrollArrow {
+    width: 0; /* Zero width - essential for creating arrow shapes */
+    height: 0; /* Zero height - essential for creating arrow shapes */
+    border-left: 10px solid transparent; /* Left border - transparent */
+    border-right: 10px solid transparent; /* Right border - transparent */
+    border-top: 15px solid #888; /* Top border - actual arrow part */
+    margin: 20px auto; /* Center the arrow and provide some spacing from the text */
+    animation: bounce 2s infinite; /* Keep the bounce animation */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}

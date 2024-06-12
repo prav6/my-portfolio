@@ -1,0 +1,21 @@
+.visibleHeader, .hiddenHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  padding: 10px 20px;
+  transition: opacity 0.5s ease-in-out;
+  background: none; /* No background */
+  box-shadow: none; /* No shadow */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.hiddenHeader {
+  opacity: 0;
+  pointer-events: none; /* Ensures clicks go through the header when hidden */
+}
+
+.visibleHeader {
+  opacity: 1;
+}
