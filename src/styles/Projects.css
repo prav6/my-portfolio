@@ -1,0 +1,125 @@
+.projectsContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px; /* Equal padding for top and bottom */
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.projectsContainer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.projectsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projectCard {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: calc(33% - 40px); /* Adjust width for three cards per row */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative; /* Added for positioning the plus button */
+}
+
+.projectCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.projectContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectContent h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.plus1Button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 20px; /* Adjust as necessary for padding */
+    right: 20px; /* Adjust as necessary for padding */
+    opacity: 0; /* Hide the button by default */
+    visibility: hidden; /* Hide the button by default */
+    transform: translateY(10px); /* Initial position for transition */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.projectCard:hover .plus1Button {
+    opacity: 1; /* Show the button on hover */
+    visibility: visible; /* Show the button on hover */
+    transform: translateY(0); /* Move to final position */
+}
+
+.plus1Button:hover {
+    background-color: #555;
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalContent {
+    background: #fff;
+    border-radius: 15px;
+    padding: 40px;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background: #555;
+}

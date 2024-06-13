@@ -36,6 +36,7 @@ const Sidebar = () => {
             <Link to="home" className={`dot ${active === 'home' ? 'active' : ''}`} smooth={true} duration={500} spy={true} data-tip="Home"></Link>
             <Link to="about" className={`dot ${active === 'about' ? 'active' : ''}`} smooth={true} duration={500} spy={true} data-tip="About"></Link>
             <Link to="education" className={`dot ${active === 'education' ? 'active' : ''}`} smooth={true} duration={500} spy={true} data-tip="Education"></Link>
+            <Link to="projects" className={`dot ${active === 'projects' ? 'active' : ''}`} smooth={true} duration={500} spy={true} data-tip="Projects"></Link>
         </div>
     );
 };
